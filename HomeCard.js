@@ -11,7 +11,7 @@ import image6 from './images/picture_scroll6.jpg'
 import image7 from './images/picture_scroll7.jpg'
 import image8 from './images/picture_scroll8.jpg'
 
-
+//  combine this block with above or import as needed.
   const images = [
     { url: image1 },
     { url: image2 },
@@ -26,26 +26,9 @@ import image8 from './images/picture_scroll8.jpg'
 function HomeCard (props) {
     const [counter, setCounter] = useState(0);
 
-    useInterval(() => {
-      setCounter(counter + 1);
+    setTimeout(() => {
+      setCounter(counter+1);
     }, 9000);
-
-    function useInterval(callback, delay) {
-      const savedCallback = useRef();
-    
-      // Remember the latest callback.
-      useEffect(() => {
-        savedCallback.current = callback;
-      }, [callback]);
-    
-      // Set up the interval.
-      useEffect(() => {
-        let id = setInterval(() => {
-          savedCallback.current();
-        }, delay);
-        return () => clearInterval(id);
-      }, [delay]);
-    }
 
     return (
         <div>
